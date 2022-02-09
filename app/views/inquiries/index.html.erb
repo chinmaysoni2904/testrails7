@@ -1,0 +1,26 @@
+<h1>Enquiry</h1>
+
+<table class="table table-border">
+	<tr>
+		<th>Sr No</th>
+		<th>Company Name</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+		<th>Phone Number</th>
+		<th>Company Type</th>
+		<th>No of Employee</th>
+	</tr>
+	<%@inquiries.each.with_index do |i, index|%>
+		<tr>
+			<td><%= index + 1%></td>
+			<td><%=i.company_name%></td>
+			<td><%=i.first_name%></td>
+			<td><%=i.last_name%></td>
+			<td><%=i.email%></td>
+			<td><%=i.phone_number%></td>
+			<td><%=i.company_type%></td>
+			<td><%=i.no_of_employee%></td>
+		</tr>
+	<%end%>
+</table>

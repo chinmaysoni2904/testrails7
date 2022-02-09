@@ -1,0 +1,54 @@
+<div class="contact-form">
+<h1>Inquiry Form</h1>
+	<%= form_with scope: :company_inquiry, url: inquiries_path, local: true do |f|%>
+
+	    <%= f.label :company_name %>
+	    <%= f.text_field :company_name, value: "#{@inquiry.try(:company_name)}"%><br>
+	    <% if @inquiry && @inquiry.errors.full_messages_for(:company_name).any? %>
+	      <div class="error-messages"><%= @inquiry.errors.full_messages_for(:company_name).first %></div>
+	    <% end %>
+
+	    <%= f.label :first_name %>
+	    <%= f.text_field :first_name, value: "#{@inquiry.try(:first_name)}"%><br>
+	    <% if @inquiry && @inquiry.errors.full_messages_for(:first_name).any? %>
+	      <div class="error-messages"><%= @inquiry.errors.full_messages_for(:first_name).first %></div>
+	    <% end %>
+
+	    <%= f.label :last_name %>
+	    <%= f.text_field :last_name, value: "#{@inquiry.try(:last_name)}"%><br>
+	    <% if @inquiry && @inquiry.errors.full_messages_for(:last_name).any? %>
+	      <div class="error-messages"><%= @inquiry.errors.full_messages_for(:last_name).first %></div>
+	    <% end %>
+
+	    <%= f.label :email %>
+	    <%= f.email_field :email, value: "#{@inquiry.try(:email)}"%><br>
+	    <% if @inquiry && @inquiry.errors.full_messages_for(:email).any? %>
+	      <div class="error-messages"><%= @inquiry.errors.full_messages_for(:email).first %></div>
+	    <% end %>
+
+	    <%= f.label :phone_number %>
+	    <%= f.text_field :phone_number, value: "#{@inquiry.try(:phone_number)}"%><br>
+	    <% if @inquiry && @inquiry.errors.full_messages_for(:phone_number).any? %>
+	      <div class="error-messages"><%= @inquiry.errors.full_messages_for(:phone_number).first %></div>
+	    <% end %>
+
+	    <%= f.label :company_type %>
+	    <%= f.text_field :company_type, value: "#{@inquiry.try(:company_type)}"%><br>
+	    <% if @inquiry && @inquiry.errors.full_messages_for(:company_type).any? %>
+	      <div class="error-messages"><%= @inquiry.errors.full_messages_for(:company_type).first %></div>
+	    <% end %>
+
+	    <%= f.label :no_of_employee %>
+	    <%= f.text_field :no_of_employee, value: "#{@inquiry.try(:no_of_employee)}"%><br>
+	    <% if @inquiry && @inquiry.errors.full_messages_for(:no_of_employee).any? %>
+	      <div class="error-messages"><%= @inquiry.errors.full_messages_for(:no_of_employee).first %></div>
+	    <% end %>
+
+	    <%= f.submit :submit%>
+<%end%>
+</div>
+<style type="text/css">
+	.contact-form{text-align: center;padding: 5px;}
+	.contact-form input {padding: 5px;margin: 5px 0 5px 0;}
+	.contact-form .error-messages {color: red;}
+</style>
